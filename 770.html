@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Loading Mod 770…</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #loading {
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-  <p>Loading game…</p>
+  <div id="loading">Loading Mod 770…</div>
 
   <script>
-    fetch("https://github.com/Kiritoasty/mods/releases/download/770/770.html")
-      .then(response => response.blob())
-      .then(blob => {
-        const url = URL.createObjectURL(blob);
-        location.replace(url);
-      })
-      .catch(err => {
-        document.body.innerHTML = "<p>no.</p>";
-        console.error(err);
-      });
+    const releaseURL = "https://github.com/Kiritoasty/mods/releases/download/770/770.html";
+
+    // Open the Release file in a new tab/window
+    window.location.href = releaseURL;
   </script>
 </body>
 </html>
