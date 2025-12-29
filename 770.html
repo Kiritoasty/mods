@@ -1,5 +1,23 @@
-<script>
-fetch("https://github.com/Kiritoasty/mods/releases/download/770/770.html")
-  .then(r => r.blob())
-  .then(b => location.replace(URL.createObjectURL(b)));
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Mod 770…</title>
+</head>
+<body>
+  <p>Loading game…</p>
+
+  <script>
+    fetch("https://github.com/Kiritoasty/mods/releases/download/770/770.html")
+      .then(response => response.blob())
+      .then(blob => {
+        const url = URL.createObjectURL(blob);
+        location.replace(url);
+      })
+      .catch(err => {
+        document.body.innerHTML = "<p>no.</p>";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
